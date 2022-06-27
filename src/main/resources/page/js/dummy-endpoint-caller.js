@@ -1,5 +1,8 @@
-async function getDateAndTimeInJson() {
-    var dateAndTime = null;
-    const url = 'http://localhost:8080/sekta/api/dummy/';
-    return dateAndTime = await fetch(url).then(response => response.json());
+class APICaller {
+    constructor() {}
+
+    static async getDateAndTimeInJson(url) {
+        var dateAndTime = null;
+        return dateAndTime = await fetch(url).then(response => response.json());
+    }
 }
