@@ -9,9 +9,11 @@ function addJsFiles(){
     jsLoader('dummy-endpoint-caller.js');
     jsLoader('dummy-content-displayer.js');
     jsLoader('dummy-page-loader.js');
+    jsLoader('https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js')
 }
 
 function addCssFiles(){
+    cssLoader('https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css')
     cssLoader('dummy-style.css');
 }
 
