@@ -1,7 +1,7 @@
 package com.cicsok.sekta.web.rest.factory;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
@@ -27,15 +27,15 @@ public class DummyResponseFactoryTest {
     private static final LocalDateTime ACTUAL_DATE_TIME = LocalDateTime.of(YEAR, MONTH, DAY, HOUR, MINUTE, SECOND);
 
     @Mock
-    private Supplier<LocalDateTime> actualDateTimeSupplierMock;
+    private Supplier<LocalDateTime> dateTimeSupplierMock;
 
     private DummyResponseFactory underTest;
 
-    @BeforeEach
+    @Before
     public void init() {
-        MockitoAnnotations.openMocks(this);
+        MockitoAnnotations.initMocks(this);
 
-        underTest = new DummyResponseFactory(actualDateTimeSupplierMock);
+        underTest = new DummyResponseFactory(dateTimeSupplierMock);
     }
 
     @Test
@@ -44,7 +44,7 @@ public class DummyResponseFactoryTest {
         final var expectedDate = "2022-06-09";
         final var expectedTime = "08:07:00";
 
-        given(actualDateTimeSupplierMock.get()).willReturn(ACTUAL_DATE_TIME);
+        given(dateTimeSupplierMock.get()).willReturn(ACTUAL_DATE_TIME);
 
         // When
         final var actual = underTest.create();

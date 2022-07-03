@@ -11,3 +11,5 @@ spring:
   web:
     resources:
       static-locations: classpath:/page/html
+  main:
+    allow-bean-definition-overriding: true

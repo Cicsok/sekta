@@ -2,8 +2,8 @@ package com.cicsok.sekta.web.rest.controller;
 
 import com.cicsok.sekta.web.rest.factory.DummyResponseFactory;
 import com.cicsok.sekta.web.rest.response.DummyResponse;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.http.HttpStatus;
@@ -23,9 +23,9 @@ public class DummyRESTControllerTest {
 
     private DummyRESTController underTest;
 
-    @BeforeEach
+    @Before
     public void init() {
-        MockitoAnnotations.openMocks(this);
+        MockitoAnnotations.initMocks(this);
 
         underTest = new DummyRESTController(factoryMock);
     }

@@ -1,7 +1,7 @@
 package com.cicsok.sekta.web.pageloader.controller;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
@@ -11,7 +11,7 @@ public class DummyHTMLPageLoaderControllerTest {
 
     private DummyHTMLPageLoaderController underTest;
 
-    @BeforeEach
+    @Before
     public void init() {
         underTest = new DummyHTMLPageLoaderController();
     }
