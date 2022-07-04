@@ -1,7 +1,7 @@
 class HomePageLoader {
     constructor() { }
 
-    loadHomePage() {
+    load() {
         this.loadHeader();
         this.loadFooter();
     }
@@ -16,4 +16,4 @@ class HomePageLoader {
 }
 
 let homePageLoader = new HomePageLoader;
-homePageLoader.loadHomePage();
+homePageLoader.load();

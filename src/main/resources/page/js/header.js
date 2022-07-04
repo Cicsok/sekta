@@ -55,9 +55,8 @@ class NavBarItems {
         return dropDownLinkContainer;
     }
 
-    createDropDownItems(linkName, href, parent) {
-        let dropDownItems = this.createDropDownItems(linkName, href);
-        return dropDownItems;
+    createDropDownItems(linkName, href) {
+        return this.createDropDownItems(linkName, href);
     }
 
     createDropDownMenu() {

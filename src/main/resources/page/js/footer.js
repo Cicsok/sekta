@@ -6,12 +6,13 @@ class FooterLinks {
 
     addFooterLinks(links) {
         for (let [linkName, href] of Object.entries(links)) {
-            this.createFooterLinks(linkName, href);
+            parent = document.getElementById("footer");
+            let footerLink = this.createFooterLinks(linkName, href);
+            parent.append(footerLink);
         }
     }
 
     createFooterLinks(linkName, href) {
-        parent = document.getElementById("footer");
         let link = document.createElement("a");
         link.href = href;
         link.classList.add("d-block");
@@ -20,6 +21,6 @@ class FooterLinks {
         link.onclick = function () {
             alert('You clicked to ' + linkName + '!');
         }
-        parent.append(link);
+        return link;
     }
 }
