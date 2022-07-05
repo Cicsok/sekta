@@ -1,9 +1,11 @@
 package com.cicsok.sekta.web.rest.controller;
 
 import com.cicsok.sekta.web.rest.marker.ControllerIntegrationTest;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
@@ -12,13 +14,13 @@ import java.time.Month;
 import java.util.function.Supplier;
 
 import static org.mockito.BDDMockito.given;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 
+@RunWith(SpringRunner.class)
 @ControllerIntegrationTest
-public class DummyRESTControllerIT {
+public class DummyRESTControllerIntegrationTest {
 
     private static final int YEAR = 2022;
     private static final Month MONTH = Month.JUNE;
@@ -43,7 +45,6 @@ public class DummyRESTControllerIT {
 
         // When and Then
         mockMvc.perform(MockMvcRequestBuilders.get("/api/dummy"))
-                .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.date").value("2022-06-09"))
                 .andExpect(jsonPath("$.time").value("08:07:00"));

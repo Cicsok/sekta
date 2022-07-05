@@ -4,12 +4,6 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.7.0</version>
-    </parent>
-
     <groupId>com.cicsok.sekta</groupId>
     <artifactId>sekta</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -19,8 +13,21 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
 
-        <versions.dependency.springfox>3.0.0</versions.dependency.springfox>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
+        <versions.spring-boot>2.7.0</versions.spring-boot>
+
+        <versions.dependency.springfox>3.0.0</versions.dependency.springfox>
+        <versions.dependency.lombok>1.18.24</versions.dependency.lombok>
+
+        <versions.dependency.mockito>2.22.0</versions.dependency.mockito>
+        <versions.dependency.cucumber>6.10.3</versions.dependency.cucumber>
+        <versions.dependency.selenium>3.141.59</versions.dependency.selenium>
+        <versions.dependency.webdrivermanager>4.3.1</versions.dependency.webdrivermanager>
+        <versions.dependency.rest-assured>5.1.1</versions.dependency.rest-assured>
+
+        <versions.plugin.surefire>2.12.4</versions.plugin.surefire>
         <versions.plugin.checkstyle>3.1.0</versions.plugin.checkstyle>
         <versions.plugin.jacoco>0.8.8</versions.plugin.jacoco>
     </properties>
@@ -29,7 +36,14 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+            <version>${versions.spring-boot}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <version>${versions.spring-boot}</version>
+        </dependency>
+
 
         <dependency>
             <groupId>io.springfox</groupId>
@@ -40,15 +54,69 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <version>${versions.dependency.lombok}</version>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <version>${versions.spring-boot}</version>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>${versions.dependency.cucumber}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${versions.dependency.cucumber}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>cucumber-spring</artifactId>
+            <version>${versions.dependency.cucumber}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${versions.dependency.selenium}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-support</artifactId>
+            <version>${versions.dependency.selenium}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>${versions.dependency.webdrivermanager}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>${versions.dependency.mockito}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${versions.dependency.rest-assured}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+            <version>${versions.spring-boot}</version>
+        </dependency>
 
     </dependencies>
 
@@ -57,6 +125,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${versions.spring-boot}</version>
             </plugin>
 
             <plugin>
@@ -77,22 +146,10 @@
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-failsafe-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>integration-test</goal>
-                            <goal>verify</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
+                <version>${versions.plugin.surefire}</version>
                 <configuration>
-                    <argLine>@{argLine}</argLine>
+                    <argLine>${argLine}</argLine>
                 </configuration>
             </plugin>
 
@@ -132,8 +189,10 @@
                                         <exclude>com.cicsok.sekta.service.supplier.*</exclude>
 
                                         <exclude>com.cicsok.sekta.web.app.*</exclude>
+                                        <exclude>com.cicsok.sekta.web.rest.controller.VersionRESTController</exclude>
                                         <exclude>com.cicsok.sekta.web.rest.marker.*</exclude>
                                         <exclude>com.cicsok.sekta.web.rest.response.*</exclude>
+                                        <exclude>com.cicsok.sekta.web.pageloader.controller.RandomNumberGeneratorController.RandomNumberQuery</exclude>
                                     </excludes>
                                 </rule>
                             </rules>

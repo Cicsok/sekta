@@ -16,10 +16,10 @@ public class DummyResponseFactory {
 
     private static final DateTimeFormatter TIME_FORMATTER = DateTimeFormatter.ofPattern("HH:mm:ss");
 
-    private final Supplier<LocalDateTime> actualDateTimeSupplier;
+    private final Supplier<LocalDateTime> dateTimeSupplier;
 
     public DummyResponse create() {
-        final var dateTime = actualDateTimeSupplier.get();
+        final var dateTime = dateTimeSupplier.get();
         
         return DummyResponse.builder()
                 .date(dateTime.toLocalDate().format(DATE_FORMATTER))
