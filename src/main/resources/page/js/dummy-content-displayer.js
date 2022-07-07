@@ -1,7 +1,7 @@
-class WriteOutDataOnDummyPage {  
+class DummyPageContentPopulator {  
     constructor() {}
 
-    static writeOutDateOrTime(id, data) {
+    static displayDateTime(id, data) {
         document.getElementById(id).innerHTML = data; 
     }
 }

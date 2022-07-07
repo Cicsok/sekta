@@ -1,8 +1,7 @@
-class APICaller {
+class DummyRESTAPICaller {
     constructor() {}
 
-    static async getDateAndTimeInJson(url) {
-        var dateAndTime = null;
-        return dateAndTime = await fetch(url).then(response => response.json());
+    static async getData(url) {
+        return await fetch(url).then(response => response.json());
     }
 }
