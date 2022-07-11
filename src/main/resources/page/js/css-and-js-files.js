@@ -27,5 +27,6 @@ function jsLoader(jsLink){
     const parent = document.getElementsByTagName('head')[0];
     const script = document.createElement('script');
     script.src = jsLink;
+    script.setAttribute('async', "");
     parent.appendChild(script);
 }
