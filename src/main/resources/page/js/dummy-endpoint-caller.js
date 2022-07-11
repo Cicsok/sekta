@@ -1,8 +1,13 @@
 class DummyRESTAPICaller {
+
+    serverOrigin = window.location.origin;
+    apiPrefix = "/sekta/api";
+    resourcePrefix = "/dummy";
+    url = this.serverOrigin + this.apiPrefix + this.resourcePrefix;
+
     constructor() {}
 
-    static async getData() {
-        const url = 'http://localhost:8080/sekta/api/dummy';
-        return await fetch(url).then(response => response.json());
+    async getData() {
+        return await fetch(this.url).then(response => response.json());
     }
 }

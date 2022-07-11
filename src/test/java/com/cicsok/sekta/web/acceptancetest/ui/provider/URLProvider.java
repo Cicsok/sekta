@@ -17,10 +17,10 @@ public class URLProvider {
 
     private static final String APP_PREFIX = "/sekta/";
 
-    private static final String RANDOM_NUMBER_GENERATOR_PATH = "/random-number-generator";
+    private static final String DUMMY_PAGE_PATH = "/dummy";
 
-    public String getRandomNumberUrl() {
-        return getBaseURL().append(RANDOM_NUMBER_GENERATOR_PATH).toString();
+    public String getDummyPageURL() {
+        return getBaseURL().append(DUMMY_PAGE_PATH).toString();
     }
 
     private StringBuilder getBaseURL () {

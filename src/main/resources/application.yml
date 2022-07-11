@@ -10,6 +10,6 @@ spring:
       suffix: .html
   web:
     resources:
-      static-locations: classpath:/page/html
+      static-locations: classpath:/page/html, classpath:/page/css, classpath:/page/js
   main:
     allow-bean-definition-overriding: true

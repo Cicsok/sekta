@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 public class PageConfig {
 
     @Bean
-    public PageProvider<RandomNumberGeneratorPage> randomNumberGeneratorPage() {
-        return new PageProvider<>(RandomNumberGeneratorPage.class);
+    public PageProvider<DummyPage> dummyPageProvider() {
+        return new PageProvider<>(DummyPage.class);
     }
 }
