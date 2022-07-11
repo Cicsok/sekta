@@ -1,0 +1,15 @@
+server:
+  servlet:
+    contextPath: /sekta
+
+spring:
+  mvc:
+    path-match:
+      matching-strategy: ant-path-matcher
+    view:
+      suffix: .html
+  web:
+    resources:
+      static-locations: classpath:/page/html, classpath:/page/css, classpath:/page/js
+  main:
+    allow-bean-definition-overriding: true
