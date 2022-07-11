@@ -8,8 +8,7 @@ import io.restassured.response.Response;
 
 import static org.hamcrest.Matchers.equalTo;
 
-
-public class VersionAPIStepDefs {
+public class DummyAPIStepDefs {
 
     private Response response = null;
 
@@ -25,10 +24,10 @@ public class VersionAPIStepDefs {
                 .statusCode(equalTo(statusCode));
     }
 
-    @And("^the client receives server version (.+)$")
-    public void the_client_receives_server_version_body(final String version) {
+    @And("the client receives {string} value as {string} field in the JSON response")
+    public void theClientReceivesValueAsFieldInTheResponse(final String expectedValue, final String jsonFieldName) {
         response.then()
                 .assertThat()
-                .body("version", equalTo(version));
+                .body(jsonFieldName, equalTo(expectedValue));
     }
 }
