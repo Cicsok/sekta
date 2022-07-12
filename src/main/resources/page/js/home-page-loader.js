@@ -7,6 +7,8 @@ class HomePageLoader {
     }
 
     loadHeader() {
+        NavBarTogglerButton = new NavBarTogglerButton();
+        NavBarTogglerButton.make();
         new NavBarItems(header.singleNavBarItems, header.dropDownNavBarItems);
     }
 
@@ -15,5 +17,5 @@ class HomePageLoader {
     }
 }
 
-let homePageLoader = new HomePageLoader;
+let homePageLoader = new HomePageLoader();
 homePageLoader.load();

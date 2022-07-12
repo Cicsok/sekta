@@ -6,6 +6,7 @@ function externalFilesLoader() {
 }
 
 function addJsFiles() {
+    jsLoader('navbar-toggler-button-maker.js')
     jsLoader('home-page-settings.js');
     jsLoader('header.js');
     jsLoader('footer.js');
