@@ -7,13 +7,27 @@ class HomePageLoader {
     }
 
     loadHeader() {
-        NavBarTogglerButton = new NavBarTogglerButton();
-        NavBarTogglerButton.make();
-        new NavBarItems(header.singleNavBarItems, header.dropDownNavBarItems);
+        this.loadNavBarTogglerButton();
+        this.loadNavBarItems();
     }
 
     loadFooter() {
-        new FooterLinks(footer.footerLinks);
+        this.loadFooterLinks();
+    }
+
+    loadNavBarTogglerButton(){
+        let navBarTogglerButtonMakerghj = new NavBarTogglerButtonMaker();
+        navBarTogglerButtonMakerghj.make();
+    }
+
+    loadNavBarItems(){
+        let navBarItemsMaker = new NavBarItemsMaker(header.singleNavBarItems, header.dropDownNavBarItems);
+        navBarItemsMaker.make();
+    }
+
+    loadFooterLinks(){
+        let footerLinksMaker = new FooterLinksMaker(footer.footerLinks);
+        footerLinksMaker.make();
     }
 }
 

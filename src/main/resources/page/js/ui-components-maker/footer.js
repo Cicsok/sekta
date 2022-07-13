@@ -1,7 +1,10 @@
-class FooterLinks {
+class FooterLinksMaker {
     constructor(links) {
         this.links = links;
-        this.addFooterLinks(links);
+    }
+
+    make(){
+        this.addFooterLinks(this.links);
     }
 
     addFooterLinks(links) {
@@ -13,14 +16,16 @@ class FooterLinks {
     }
 
     createFooterLinks(linkName, href) {
+        let linkWrapper = document.createElement("div");
         let link = document.createElement("a");
         link.href = href;
-        link.classList.add("d-block");
+        link.classList.add("footer-link");
         link.target = '_blank';
         link.innerHTML = linkName;
         link.onclick = function () {
             alert('You clicked to ' + linkName + '!');
         }
-        return link;
+        linkWrapper.append(link);
+        return linkWrapper;
     }
 }

@@ -1,9 +1,12 @@
-class NavBarItems {
+class NavBarItemsMaker {
     constructor(singleNavBarItems, dropDownNavBarItems) {
         this.singleNavBarItems = singleNavBarItems;
         this.dropDownNavBarItems = dropDownNavBarItems;
-        this.addSingleItems(singleNavBarItems);
-        this.addDropDownItems(dropDownNavBarItems);
+    }
+
+    make(){
+        this.addSingleItems(this.singleNavBarItems);
+        this.addDropDownItems(this.dropDownNavBarItems);
     }
 
     addSingleItems(singleNavBarItems) {
@@ -46,7 +49,7 @@ class NavBarItems {
         dropDownLinkContainer.classList.add("nav-item", "dropdown");
         let dropDownLink = document.createElement("a");
         dropDownLink.classList.add("nav-link", "dropdown-toggle");
-        dropDownLink.id = "navbarDropdownMenuLink";
+        dropDownLink.id = "my-navbar-dropdown-menu-link";
         dropDownLink.setAttribute("role", "button");
         dropDownLink.setAttribute("data-bs-toggle", "dropdown");
         dropDownLink.setAttribute("aria-expanded", "false");
