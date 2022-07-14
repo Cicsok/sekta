@@ -1,5 +1,6 @@
 class NavBarTogglerButtonMaker {
-    constructor(){}
+    constructor(){
+    }
 
     make(){
         let button = this.addAttribute();
@@ -25,3 +26,5 @@ class NavBarTogglerButtonMaker {
         parent.append(icon);
     }
 }
+
+console.log('NavBarTogglerButtonMaker ran! 1');

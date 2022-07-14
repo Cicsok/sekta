@@ -1,6 +1,7 @@
 class FooterLinksMaker {
     constructor(links) {
         this.links = links;
+
     }
 
     make(){
@@ -29,3 +30,5 @@ class FooterLinksMaker {
         return linkWrapper;
     }
 }
+
+console.log('FooterLinksMaker ran! 4');

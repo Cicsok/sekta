@@ -2,6 +2,7 @@ class NavBarItemsMaker {
     constructor(singleNavBarItems, dropDownNavBarItems) {
         this.singleNavBarItems = singleNavBarItems;
         this.dropDownNavBarItems = dropDownNavBarItems;
+
     }
 
     make(){
@@ -84,3 +85,4 @@ class NavBarItemsMaker {
         return dropDownItem;
     }
 }
+console.log('NavBarItemsMaker ran! 3');

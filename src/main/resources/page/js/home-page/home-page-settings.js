@@ -23,3 +23,5 @@ const footer = {
         "Contact": "#"
     }
 }
+
+console.log("footer and header object created! 2")

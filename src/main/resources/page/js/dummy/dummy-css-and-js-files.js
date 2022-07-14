@@ -1,0 +1,33 @@
+externalFilesLoader();
+
+function externalFilesLoader() {
+    addCssFiles();
+    addJsFiles();
+}
+
+function addJsFiles() {
+    jsLoader('dummy-endpoint-caller.js');
+    jsLoader('dummy-content-displayer.js');
+    jsLoader('dummy-page-loader.js');
+}
+
+function addCssFiles() {
+    cssLoader('dummy-style.css');
+}
+
+function cssLoader(cssLink) {
+    const parent = document.getElementsByTagName('head')[0];
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = cssLink;
+    parent.appendChild(link);
+}
+
+function jsLoader(jsLink) {
+    const parent = document.getElementsByTagName('head')[0];
+    const script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = jsLink;
+    script.setAttribute("async", "");
+    parent.appendChild(script);
+}

@@ -2,6 +2,7 @@ class HomePageLoader {
     constructor() { }
 
     load() {
+        console.log("ENTERD LOAD()!!")
         this.loadHeader();
         this.loadFooter();
     }
@@ -32,4 +33,5 @@ class HomePageLoader {
 }
 
 let homePageLoader = new HomePageLoader();
+console.log("I made homePageLoader");
 homePageLoader.load();
