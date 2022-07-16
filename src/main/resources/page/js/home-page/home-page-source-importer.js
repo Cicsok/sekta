@@ -21,7 +21,7 @@ loadInternalFiles();
 function loadInternalFiles() {
     const internalJSLoader = new InternalJSLoader();
     console.log(internalScriptURLs);
-    InternalJSLoader.load(internalScriptURLs);
+    internalJSLoader.load(internalScriptURLs);
 }
 
 function loadExternalFiles() {

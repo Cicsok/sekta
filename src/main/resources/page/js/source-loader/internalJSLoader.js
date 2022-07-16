@@ -1,15 +1,16 @@
 class InternalJSLoader {
 
     constructor() {
+
     }
 
-    static load(scriptURLs) {
+    load(scriptURLs) {
         console.log(scriptURLs);
         const startIndex = 0;
-        InternalJSLoader.loadSingleItem(startIndex, scriptURLs);
+        this.loadSingleItem(startIndex, scriptURLs);
     }
 
-    static loadSingleItem(index, scriptURLs) {
+    loadSingleItem(index, scriptURLs) {
         console.log(index);
         if (index >= scriptURLs.length) {
             return false;
@@ -18,14 +19,16 @@ class InternalJSLoader {
         var script = document.createElement('script');
         script.onload = function() {
             console.log("Script loaded: ", scriptURLs[index]);
-            InternalJSLoader.recursiveFunctionCall(index+1, scriptURLs);
+            this.caller.callRecursiveFunction(index+1, scriptURLs);
         }
         script.src = scriptURLs[index];
 
         document.head.appendChild(script);
     }
 
-    static recursiveFunctionCall(index, scriptURLs) {
-        InternalJSLoader.loadSingleItem(index, scriptURLs);
+    caller = function RecursiveFunctionCaller() {
+        function callRecursiveFunction(index, scriptURLs) {
+            this.loadSingleItem(index, scriptURLs);
+        }
     }
 }
