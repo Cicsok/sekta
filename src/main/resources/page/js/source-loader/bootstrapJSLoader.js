@@ -1,3 +1,4 @@
+console.log("BootstrapJSLoader!");
 class BootstrapJSLoader {
 
     constructor() {

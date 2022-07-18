@@ -1,3 +1,5 @@
+console.log("home-page-source-importer!");
+
 let internalScriptURLs = [
     './ui-components-maker/navbar-toggler-button-maker.js',
     'home-page-settings.js',
