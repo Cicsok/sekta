@@ -7,9 +7,9 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class DummyHTMLPageLoaderController {
 
-    private static final String HTML_PAGE_VIEW_NAME = "dummy";
+    private static final String HTML_PAGE_VIEW_NAME = "home-page";
 
-    @GetMapping(path = "/dummy")
+    @GetMapping(path = "/home-page")
     public ModelAndView loadPage() {
         return new ModelAndView(HTML_PAGE_VIEW_NAME);
     }

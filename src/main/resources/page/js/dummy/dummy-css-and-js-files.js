@@ -1,21 +1,21 @@
 externalFilesLoader();
 
-function externalFilesLoader(){
-    addJsFiles();
+function externalFilesLoader() {
     addCssFiles();
+    addJsFiles();
 }
 
-function addJsFiles(){
+function addJsFiles() {
     jsLoader('dummy-endpoint-caller.js');
     jsLoader('dummy-content-displayer.js');
     jsLoader('dummy-page-loader.js');
 }
 
-function addCssFiles(){
+function addCssFiles() {
     cssLoader('dummy-style.css');
 }
 
-function cssLoader(cssLink){
+function cssLoader(cssLink) {
     const parent = document.getElementsByTagName('head')[0];
     const link = document.createElement('link');
     link.rel = 'stylesheet';
@@ -23,10 +23,11 @@ function cssLoader(cssLink){
     parent.appendChild(link);
 }
 
-function jsLoader(jsLink){
+function jsLoader(jsLink) {
     const parent = document.getElementsByTagName('head')[0];
     const script = document.createElement('script');
+    script.type = 'text/javascript';
     script.src = jsLink;
-    script.setAttribute('async', "");
+    script.setAttribute("async", "");
     parent.appendChild(script);
 }
