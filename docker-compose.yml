@@ -1,0 +1,10 @@
+version: '2'
+services:
+  sekta:
+    container_name: sekta
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: sekta:latest
+    ports:
+      - '8080:8080'

@@ -24,7 +24,7 @@
         <versions.dependency.mockito>2.22.0</versions.dependency.mockito>
         <versions.dependency.cucumber>6.10.3</versions.dependency.cucumber>
         <versions.dependency.selenium>3.141.59</versions.dependency.selenium>
-        <versions.dependency.webdrivermanager>4.3.1</versions.dependency.webdrivermanager>
+        <versions.dependency.webdrivermanager>5.2.1</versions.dependency.webdrivermanager>
         <versions.dependency.rest-assured>5.1.1</versions.dependency.rest-assured>
 
         <versions.plugin.surefire>2.12.4</versions.plugin.surefire>
@@ -121,6 +121,16 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${versions.spring-boot}</version>
+                <configuration>
+                    <mainClass>com.cicsok.sekta.web.app.SEKTAWebRunner</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
 
             <plugin>
