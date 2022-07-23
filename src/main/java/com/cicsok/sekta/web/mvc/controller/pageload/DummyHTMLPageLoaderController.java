@@ -1,10 +1,10 @@
-package com.cicsok.sekta.web.pageloader.controller;
+package com.cicsok.sekta.web.mvc.controller.pageload;
 
-import org.springframework.stereotype.Controller;
+import com.cicsok.sekta.web.mvc.marker.MVCController;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-@Controller
+@MVCController
 public class DummyHTMLPageLoaderController {
 
     private static final String HTML_PAGE_VIEW_NAME = "dummy";

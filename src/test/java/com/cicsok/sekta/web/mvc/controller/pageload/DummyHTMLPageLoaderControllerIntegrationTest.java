@@ -1,4 +1,4 @@
-package com.cicsok.sekta.web.pageloader.controller;
+package com.cicsok.sekta.web.mvc.controller.pageload;
 
 import com.cicsok.sekta.web.rest.marker.ControllerIntegrationTest;
 import org.junit.Test;

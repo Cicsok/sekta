@@ -1,6 +1,12 @@
 server:
   servlet:
-    contextPath: /sekta
+    context-path: /sekta
+
+controller:
+  mvc:
+    path:
+  rest:
+    path: /api
 
 spring:
   mvc:

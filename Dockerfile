@@ -28,4 +28,4 @@ COPY --from=builder app/target/sekta-1.0-SNAPSHOT.jar sekta-1.0-SNAPSHOT.jar
 
 EXPOSE 8080
 
-CMD ["java", "-jar", "sekta-1.0-SNAPSHOT.jar"]
+CMD ["java", "-jar", "-Dspring.profiles.active=on-render", "sekta-1.0-SNAPSHOT.jar"]
