@@ -1,0 +1,5 @@
+previewsEnabled: true
+
+services:
+  - type: web
+    name: sekta
