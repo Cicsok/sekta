@@ -8,7 +8,7 @@ public class RootPageRedirectController {
 
     private static final String DESTINATION_PAGE_URI = "dummy";
 
-    @GetMapping(path = "/")
+    @GetMapping(path = {"", "/"})
     public String redirect() {
         return "redirect:/" + DESTINATION_PAGE_URI;
     }
