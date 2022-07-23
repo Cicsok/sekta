@@ -1,0 +1,11 @@
+# Disable SEKTA context path for all controllers
+server:
+  servlet:
+    context-path:
+
+# Enable SEKTA context path for only the REST controllers
+controller:
+  mvc:
+    path:
+  rest:
+    path: /sekta/api

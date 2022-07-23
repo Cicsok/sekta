@@ -1,9 +1,9 @@
-package com.cicsok.sekta.web.rest.marker;
+package com.cicsok.sekta.web.mvc.marker;
 
 import org.springframework.core.annotation.AliasFor;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -14,9 +14,9 @@ import java.lang.annotation.Target;
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
-@RestController
-@RequestMapping("${controller.rest.path}")
-public @interface RESTAPIController {
+@Controller
+@RequestMapping("${controller.mvc.path}")
+public @interface MVCController {
 
     @AliasFor(annotation = Component.class)
     String value() default "";

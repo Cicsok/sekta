@@ -20,5 +20,11 @@ We would like to develop a brand new application which could help us to prepare 
 ## How to start the application (via Maven command line)
 ``mvn spring-boot:run``
 
-## Swagger-UI REST API documentation
+## How to build and start the application (via Docker command line)
+``docker-compose up --build``
+
+## Swagger-UI REST API documentation (locally)
 ``http://localhost:8080/sekta/swagger-ui/index.html``
+
+## OnRender link
+``https://sekta.onrender.com``
